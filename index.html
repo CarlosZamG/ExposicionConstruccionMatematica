@@ -1,0 +1,190 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Exposición</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h2>
+						Ecuación diferencial de Gompertz
+					</h2>
+					<p>
+						por Carlos Zamora
+					</p>
+				</section>
+				<section>
+					<h3> ¿Qué es? </h3>
+					<p>Es una modificación de la ecuación del <b>modelo logístico</b> llamada así por el matemático <a href='https://en.wikipedia.org/wiki/Benjamin_Gompertz' target='_blank'> Benjamin Gompertz </a> </p>
+					<img src="./assets/descarga.jpg" alt="Gompertz">
+				</section>
+				<section data-transition="fade">
+					<br>
+					<p>
+						\[\begin{aligned}
+						\frac{dP}{dt} \qquad &amp; = \quad kP \ln\left(\frac{A}{P}\right) \\
+						&amp; = \quad kP(\ln(A) - \ln(P))
+						\end{aligned} \]
+					</p>
+					<p class="fragment fade-in">
+						\[\begin{aligned}
+						\qquad \quad \quad &amp; = \quad P(k\ln(A) - k\ln(P)) \\
+						\end{aligned} \]
+					</p>
+				</section>
+				<section data-transition="fade">
+					<br>
+					<p>
+						\[\begin{aligned}
+						\frac{dP}{dt} \qquad &amp; = \quad kP \ln\left(\frac{A}{P}\right) \\
+						&amp; = \quad kP(\ln(A) - \ln(P))
+						\end{aligned} \]
+					</p>
+					<p>
+						\[\begin{aligned}
+						\qquad &amp; = \quad P(a - k\ln(P)) \\
+						\end{aligned} \]
+					</p>
+				</section>
+				<section data-transition="fade">
+					<br>
+					<p>
+						\[\begin{aligned}
+						\frac{dP}{dt} &amp; = kP(\ln(A) - \ln(P)) \\
+						\end{aligned} \]
+					</p>
+				</section>
+				<section data-transition="fade">
+					<br>
+					<p>
+						\[\begin{aligned}
+						\frac{dP}{P(\ln(A) - \ln(P))} &amp; = kdt \\
+						\end{aligned} \]
+					</p>
+				</section>
+				<section data-transition="fade">
+					<br>
+					<p>
+						\[\begin{aligned}
+						\int_{}^{} \frac{dP}{P(\ln(A) - \ln(P))}  &amp; =  \int_{}^{} kdt \\
+						\end{aligned} \]
+					</p>
+					<p class="fragment fade-in">
+						\[\begin{aligned}
+						\qquad \qquad \qquad \quad \quad \quad &amp; = kt + C \\
+						\end{aligned} \]
+					</p>
+				</section>
+				<section data-transition="fade">
+					Veamos la primera parte de la igualdad:
+					<p>
+						\[\begin{aligned}
+						\int_{}^{} \frac{dP}{P(\ln(A) - \ln(P))} \\
+						\end{aligned} \]
+					</p>
+					<p> Si denotamos: </p>  
+					<p>
+						\[\begin{aligned}
+						\qquad \qquad u = \ln(A) - \ln(P) \\
+						\end{aligned} \]
+					</p>
+					 
+					<p class="fragment fade-in">
+						\[\begin{aligned}
+						du =  - \frac{dP}{P} \\
+						\end{aligned} \]
+					</p>
+				</section>
+				<section data-transition="fade">
+					<p>
+						\[\begin{aligned}
+						\int_{}^{} \frac{dP}{P(\ln(A) - \ln(P))} &amp; = - \int_{}^{} \frac{du}{u} \\
+						\end{aligned} \]
+					</p>
+					<p class="fragment fade-in">
+						\[\begin{aligned}
+						\qquad \qquad \qquad \qquad \quad =  - \ln(u) \\
+						\end{aligned} \]
+					</p>
+				</section>
+				<section data-transition="fade">
+					<br>
+					<p>
+						\[\begin{aligned}
+						- \ln(u) &amp; = kt + C \\
+						\end{aligned} \]
+					</p>
+				</section>
+				<section data-transition="fade">
+					<br>
+					<p>
+						\[\begin{aligned}
+						\quad \ln(u) &amp; = -kt + C \\
+						\end{aligned} \]
+					</p>
+				</section>
+				<section data-transition="fade">
+					<br>
+					<p>
+						\[\begin{aligned}
+						\qquad  \qquad \qquad u  &amp; =  e^{-kt + C} \\
+						\end{aligned} \]
+					</p>
+					<p class="fragment fade-in">
+						\[\begin{aligned}
+						\ln(A) - \ln(P) &amp; = Be^{-kt} \\
+						\end{aligned} \]
+					</p>
+					<p class="fragment fade-in">
+						\[\begin{aligned}
+						\ln(P) &amp; = \ln(A) - Be^{-kt} \\
+						\end{aligned} \]
+					</p>
+					<p class="fragment fade-in">
+						\[\begin{aligned}
+						P &amp; =  e^{\ln(A) - Be^{-kt}} \\
+						 &amp; =  e^{\ln(A)} e^{- Be^{-kt}}
+						\end{aligned} \]
+					</p>
+				</section>
+				<section>
+					La función de Gompertz nos queda:
+					<p>
+						\[\begin{aligned}
+						P(t) &amp; =  Ae^{- Be^{-kt}}
+						\end{aligned} \]
+					</p>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script src="plugin/math/math.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes,RevealMath.KaTeX]
+			});
+		</script>
+	</body>
+</html>
