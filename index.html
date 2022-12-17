@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="es">
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -18,7 +18,7 @@
 			<div class="slides">
 				<section>
 					<h2>
-						Ecuación diferencial de Gompertz
+						Modelo de Gompertz para el crecimiento tumoral
 					</h2>
 					<p>
 						por Carlos Zamora
@@ -26,7 +26,7 @@
 				</section>
 				<section>
 					<h3> ¿Qué es? </h3>
-					<p>Es una modificación de la ecuación del <b>modelo logístico</b> llamada así por el matemático <a href='https://en.wikipedia.org/wiki/Benjamin_Gompertz' target='_blank'> Benjamin Gompertz </a> </p>
+					<p>Es una modificación de la ecuación del <b>modelo logístico</b> llamada así por el matemático <a href='https://en.wikipedia.org/wiki/Benjamin_Gompertz' target='_blank'> Benjamin Gompertz. </a> </p>
 					<img src="./assets/descarga.jpg" alt="Gompertz">
 				</section>
 				<section data-transition="fade">
@@ -165,8 +165,88 @@
 						P(t) &amp; =  Ae^{- Be^{-kt}}
 						\end{aligned} \]
 					</p>
+					<p class="fragment fade-in">
+						¿Qué representan las constantes $A,B,k$?
+					</p>
 				</section>
-
+				<section>
+					<p>
+						Veamos que 
+						\[\begin{aligned}
+						\lim_{t\to\infty} P(t) &amp; = \lim_{t\to\infty} Ae^{- Be^{-kt}} \\
+						&amp; = Ae^{0} \\
+						&amp; = A \\
+						\end{aligned} \]
+					</p>
+				</section>
+				<section data-background-color="white">
+					<p>
+						$P(t)=3e^{-Be^{-0.5t}}$
+					</p>
+					<img src="./assets/graf1.png" alt="grafica-b">
+				</section>
+				<section>
+					<h5>
+						Aplicación en el crecimiento tumoral
+					</h5>
+					<p>
+						El modelo de Gompertz es útil para describir el crecimiento de sistemas biológicos, entre ellos el crecimiento de células cancerígenas.
+					</p>
+				</section>
+				<section>
+					<p>
+						En el desarrollo del cáncer se distinguen las siguientes etapas:
+					</p>	
+						<ul>
+							<li>
+								Fase avascular.
+							</li>
+							<li>
+								Fase vascular.
+							</li>
+							<li>
+								Fase metastásica.
+							</li>
+						</ul>
+						<p>
+							<br>
+							El modelo de Gompertz descibe el tumor en la fase avascular.
+						</p>					
+				</section>
+				<section>
+					<p>
+						Al detectar un tumor, lo primero que se hace es evaluar su tamaño, así que tomamos $P(0)=P_0:$
+					</p>
+					<p>
+						\[\begin{aligned}
+						P_0 &amp; = Ae^{-Be^{-k\cdot0}} \\
+						&amp; = Ae^{-B}
+						\end{aligned} \]
+					</p>
+					<p class="fragment fade-in">
+						\[\begin{aligned}
+						\frac{P_0}{A} &amp; = e^{-B}
+						\end{aligned} \]
+					</p>
+					<p class="fragment fade-in">
+						\[\begin{aligned}
+						\ln \left( \frac{P_0}{A} \right) &amp; = -B
+						\end{aligned} \]
+					</p>
+				</section>
+				<section>
+					Sustituyendo en la ecuación:
+					<p>
+						\[\begin{aligned}
+						P(t) &amp; = Ae^{\ln \left( \frac{P_0}{A} \right) e^{-kt}} \\
+						&amp; = A\left( \frac{P_0}{A} \right)^{e^{-kt}} 
+						\end{aligned} \]
+					</p>
+				</section>
+				<section data-background-color="white">
+					Con $A = 2, P_0 = 0.5, k = 1$
+					<img src="./assets/graf2.png" alt="graf2">
+				</section>
 			</div>
 		</div>
 
